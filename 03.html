@@ -1,0 +1,18 @@
+<script>
+
+    function makeCounter() {
+        let count = 0;
+        return function() {
+            return a++;
+        };
+    }
+
+    let c1 = makeCounter();
+    console.log(c1);
+    console.log(c1);
+
+    let c2 = makeCounter();
+    console.log(c2);
+    console.log(c2);
+
+</script>
