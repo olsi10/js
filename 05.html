@@ -1,0 +1,42 @@
+<script>
+
+    //클래스!!!
+
+    //class 키워드와 함께 클래스 이름 짓기
+    class MyClass {
+        //생성자 메서드 정의
+        constructor() {
+        
+        }
+        //클래스에 필요한 여러 메서드 정의
+        method1() {
+
+        }
+        method2() {
+
+        }
+    }
+
+
+//클래스를 정의하고, 생성자 함수를 호출하듯이
+//new 키워드와 클래스 이름을 함수처럼 호출하면 객체 생성
+
+    //user 클래스 생성
+    class Uner {
+        //생성자 메서드는 new User(...) 명령어에 의해 자동 호출
+        constructor(name) {
+            //전달받은 인수를 이용해서 필요한 속성값 초기화
+            this.name=  name;
+    }
+    sayHi() {
+        alert(this.name);
+    }
+}
+
+//객체 생성
+let user = new User("John");
+
+user.sayHi();
+
+
+</script>
