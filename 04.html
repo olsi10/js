@@ -1,0 +1,112 @@
+<script>
+
+// call, apply
+// 함수를 호출하면서 this 값을 지정해주고 싶을 때 씀
+
+// call, apply 차이
+// call 가변인자, apply는 배열
+
+
+// biind 용도
+// 특정 값을 this로 바닝ㄴ딩 구속한 람수를 반환(호출x)
+
+// bind함수를 통해 반환받은 함수를 또 bind로 this값 바꿀 수 잇나?
+// x
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Shape - 부모 클래스(superclass)
+function Shape(x, y) {
+this.x = x;
+this.y = y;
+}
+// 부모 클래스의 메서드 정의
+Shape.prototype.move = function(x, y) {
+console.log(`Shape moved from ${this.x},${this.y} to ${x},${y}`);
+this.x += x;
+this.y += y;
+}
+// Rectangle - 자식 클래스(subclass)
+function Rectangle(x, y, w, h) {
+// 부모 생성자 함수 호출
+// 자바의 super와 비슷한 기능이라고 생각해도 무방 (new 키워드를 이용해서 호출하지 않았
+//음을 유의!)
+Shape.call(this, x, y);
+this.w = w;
+this.h = h;
+}
+// Object.create 메서드를 호출하여 Shape.prototype을 프로토타입 객체로 사용하는 비어있는
+//객체를 생성 후 Rectangle 생성자 함수의 prototype 속성 지정
+// Rectangle.prototype에 대입될 객체의 모습 => { __proto__: Shape.prototype }
+Rectangle.prototype = Object.create(Shape.prototype);
+// Rectangle.prototype 객체의 constructor가 대입으로 인하여 사라졌으므로 다시 설정
+// (엄밀히 말하면 사라졌다기 보다는, constructor 속성에 접근할 경우 constructor 속성을
+Rectangle.prototype //객체 내부에서 찾을 수 없으므로 프로토타입 체인을 검색하여 만나게 된
+Shape.prototype.constructor //를 constructor로 사용하게 됨)
+Rectangle.prototype.constructor = Rectangle;
+// Rectangle 생성자 함수를 통해서 생성된 객체가 사용할 공통 메서드 정의
+Rectangle.prototype.size = function() {
+return this.w * this.h;
+}
+let rect = new Rectangle(0, 0, 20, 10);
+// Shape.prototype 접근을 통해서 move 메서드를 호출
+console.log(rect.move(5, 5));
+// rect 객체에 size 메서드가 없으므로 프로토타입 체인을 검색하여 프로토타입 객체인
+Rectangle.prototype에 //정의된 size 메서드를 호출
+
+
+
+
+
+
+
+
+
+
+
+</script>
