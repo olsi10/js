@@ -1,0 +1,29 @@
+<input id = "elem" type = "button" value = "클릭해 주세요">
+
+<script>
+	let elem = document.getElementById("elem");
+	//elem.onclick = function() { alert("감사합니다.");
+	//elem.onclick = null;
+
+	//마우스 움직일 때 onmousemove / 키 눌렀을 때 keypress
+
+	function handler() {
+		alert("감사합니다.");
+	}
+	//문자열 전달할 때 이벤트에 이름을 쓰면 됨 ex) 클릭 이벤트 => 클릭
+	elem.addEventListener("click", handler);
+	elem.addEventListener("click", function() {
+		alert("잘 가세요.");
+	});
+
+</script>
+
+
+
+<!--
+	긴 코드를 HTML 속성값으로 사용하는 것은 권장되지 않음
+		1. HTML 태그 중간에 자바스크립트 코드가 들어가 있으면 관리하기 불편함
+		2. 긴 코드를 작성하기 어려움 
+		따라서 정말 간단한 한 줄짜리 코드를 사용하는 것이 아니라면, 함수를 만들어서 호출
+<input value = "클릭해 주세요." onclick = "alert('클릭!") type = "button">-->
+

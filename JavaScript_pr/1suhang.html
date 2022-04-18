@@ -1,0 +1,46 @@
+<script>
+//1번. 다음 함수를 3가지 버전(함수 선언식, 표현식, 화살표 함수)으로 정의 (함수 이름은 각각 greet1, greet2, greet3)으로 설정할 것
+
+function greet1(n, name) {
+	for(let i = 0; i < n; i++) {
+		console.log(`안녕, ${name}`);
+	}
+}
+
+let greet2 = function(n, name) {
+	for(let i = 0; i < n; i++) {
+		console.log(`안녕, ${name}`);
+	}
+}
+
+let greet3 = (n, name) => {
+	for(let i = 0; i < n; i++) {
+		console.log(`안녕, ${name}`);
+	}
+	return;
+}
+
+greet1(3, '김철수');
+greet2(3, '김철수');
+greet3(3, '김철수');
+
+//2번. 다음과 같은 결과가 나올 수 있도록 함수 choose를 작성하되, 반드시 함수로 전달할 함수를 활용할 수 있도록 코드를 작성
+
+    function choose(n, a, b){
+        for(var i = 0; i<n; i++){
+            a();
+            b();
+        }
+    }
+
+    choose(2, () => console.log("Hello"), () => console.log("world"));
+
+    function choose(n, a, b) {
+    	for(let i = 0; i < n; i++) {
+    		a();
+    		b();
+    	}
+    }
+
+    choose(2, () => console.log("Hello"), () => console.log("wolrd"));
+</script>

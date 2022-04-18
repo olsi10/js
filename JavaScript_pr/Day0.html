@@ -1,0 +1,112 @@
+<script>
+	// function showMassage() {
+		
+	// 	//지역변수
+	// 	let say = 'hi!';
+		
+	// 	//함수 내부에서만 message 접근 가능
+	// 	alert(say);
+	// };
+
+	//함수 호출
+	//showMassage();
+//--------------------------------------------------------
+
+	//함수 내부에서 외부 영역에 선언된 외부 변수에 접근 가능 + 값수정가능
+	// let userName = "Bob";
+
+	// function Massage() {
+	// 	let user = 'Hi, ' + userName;
+	// 	alert(user);
+	// };
+
+	// userName = "Yun";
+	// Massage();
+
+	// userName = "bobobobo";
+	// Massage();
+//-----------------------------------------------------------
+
+	// function showMassage(name, age) {
+	// 	alert("이름 : " + name + "// 나이 : " + age);
+	// };
+
+	// showMassage('윤영', 17);
+
+	// //이 경우 age에는 undefined 할당
+	// // showMassage('윤영');
+	// //age에는 값이 없어서 그럼
+	// //그럴 경우에는 "no text given" 할당
+
+	// function showMassage(name, age = "no text given") {
+	// 	alert("이름 : " + name + "//" + age);
+	// };
+
+	// showMassage('윤');
+
+//------------------------------------------------------------
+
+	// let sayHi = function() {
+	// 	alert('hello');
+	// };
+
+	// sayHi();
+
+	// //함수 표현식은 함수를 값에 대입 가능
+
+	// let func = sayHi;
+
+	// func();
+
+	//짜장면만 주문할 수 있는 괴팍한 중식당
+
+	// let menu;
+
+	// function Error() {
+	// 	alert("짜장면만 먹을 수 있다고 바보야");
+	// };
+
+	// function Oder(menu) {
+	// 	let only = '짜장면';
+	// 	let hi = confirm("하이! 여긴 짜장면만 먹을 수 있음.\n 머먹을래");
+	// 	menu = prompt("메뉴 입력 : ");
+
+	// 	if(menu != only) {
+	// 		Error();
+	// 	} else {
+	// 		alert(`${menu} 갖다줄게`);
+	// 	}
+	// };
+
+	// Oder(menu);
+//----------------------------------------------
+
+	//함수는 값이므로 함수의 인자값으로 함수 전달 가능
+	//인자값 : 함수를 호출할 때 함수에 전달되는 인자의 값
+	//인자 : 어떤 사물의 원인이 되는 낱낱의 요소나 물질
+
+//----------------------------------------------
+
+	//집게버거만 주문할 수 있는 집게리아
+
+	let menu;
+
+	function Error() {
+		alert("어이, Baka 여긴 집게리아라구.");
+	};
+
+	function Oder(menu) {
+		let only = "집게버거";
+		let askOder = confirm("어이, Baka 뭐 먹을래 집게버거 밖에 없어");
+
+		menu = prompt("메뉴 입력 : ");
+		if(menu != only) {
+			Error();
+		} else {
+			alert(`그래. ${menu} 갖다줄게`);
+		}
+	};
+
+	Oder(menu);
+
+</script>

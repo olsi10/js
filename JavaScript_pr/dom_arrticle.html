@@ -1,0 +1,45 @@
+<body>
+	<img />
+	<!-- <div id="hello" class="world" babo="merong">div</div>
+	<input type="text" value="input value" />
+	<input type="checkbox" />
+	<p style="color:red;background:yellow;font-size:24px;">styled</p> -->
+</body>
+<script>
+	//코드 입력(prompt로 이미지 주소 입력 받고 img 태그의 src로 지정)
+	let src = prompt("이미지 주소 입력");
+	let img = document.body.children[0];
+
+	img.setAttribute("src", src);
+	//console.log(img.innerHMTL);
+
+	img.setAttribute("style", "width: 300px; height: 300px;");
+
+	let show = true;
+	setInterval(function() {
+		if(show) {
+			img.setAttribute("style", "display : black;")
+		} else {
+			img.setAttribute("style", "display : none;")
+		}
+		show =! show;
+	} ,10);
+
+
+	// let div = document.body.children[0];
+	// // //let div = document.getElementById ('hello');
+	// // let div = document.querySelector('#hello');
+	// // let div = document.querySelectorAll('#hello')[0];
+	// // let div = document.getElementByTagName('div')[0];
+	// console.log(div);
+
+	// console.log(div.getAttribute('id'));
+	// console.log(div.getAttribute('class'));
+
+	// div.setAttribute('mirim', 'solution');
+	// console.log(div);	
+	
+	// div.setAttribute('class', 'myclass');
+	// div.removeAttribute('babo');
+	// console.log(div);
+</script>

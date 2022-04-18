@@ -1,0 +1,103 @@
+<!-- <body>
+	<button id = "btn">다크 모드</button>
+</body>
+<script>
+	let btn = document.querySelector('#btn');
+	let darkmode = false;
+	
+	btn.onclick = function() {
+		if(darkmode) {
+			document.body.style.background = "white";
+			btn.innerHTML = "다크 모드";
+			darkmode = false;
+		} else {
+		document.body.style.background = "black";
+		btn.innerHTML = "라이트 모드";
+		darkmode = true;
+	}
+}
+</script> -->
+
+<!-- <body>
+	<button id = "red">red</button>
+	<button id = "green">green</button>
+	<button id = "blue">blue</button>
+	<div id = "change" style = "width:50px; height:50px;"></div>
+</body>
+<script>
+	let red = document.getElementById('red');
+
+	let green = document.querySelector('#green');
+
+	let blue = document.querySelectorAll('#blue')[0];
+
+	red.onclick = function() {
+			change.style.background = "red";
+		}
+	green.onclick = function() {
+			change.style.background = "green";
+		}
+	blue.onclick = function() {
+			change.style.background = "blue";
+		}
+
+
+</script> -->
+
+<!-- <style>
+#santa {
+	position : fixed;
+	top : 0 px;
+	left : 0 px;
+}
+</style>
+<body>
+	<div id = "santa">🎅</div>
+</body>
+<script>
+	let santa = document.getElementById('santa');
+
+	let x = Number(prompt('x의 좌표 입력'));
+	let y = Number(prompt('y의 좌표 입력'));
+
+
+	// let wid = prompt('가로 길이 입력');
+	// let hei = prompt('세로 길이 입력');
+
+	santa.style.left = x;
+	santa.style.top = y;
+
+
+
+</script> -->
+
+<style>
+#idd {
+	width: 500px;
+	height: 500px;
+}
+</style>
+<body>
+	 <img name="igg" src="javapro.PNG" onclick="fun3()">
+	 <img id = "idd" src = "4.jpg">
+</body>
+<script>
+	let santa = document.getElementById('santa');
+
+	let img = confirm('허경영일까 아닐까');
+
+			    	alert('헹!! 틀렸군!!');
+	function fun2() {
+        document.images[0].src = "javapro.PNG";
+        document.images[0].width = 200;
+    }
+
+    function fun3() {
+        document.igg.src = "4.jpg";
+
+
+}
+
+
+
+</script>

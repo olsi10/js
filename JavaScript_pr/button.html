@@ -1,0 +1,32 @@
+<style>
+	.dark-mode {
+		background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSg0CoPY0gA7MlNzyOeocC3FStsoB2FKMRNDw&usqp=CAU);
+		background-color: black;
+		color: white;
+	}
+	</style>
+
+</head>
+<body>
+	<button onclick= "darkMode()" id= "button">다크 모드</button>
+
+	<script>
+	function darkMode() {
+
+		let body = document.body;
+
+		//toggle은 위위 코드의 동작을 한 번에 해결한다.
+		//toggle은 클래스의 유무를 체크해서 없으면 add, 있으면 remove 자동으로 시킴
+		body.classList.toggle("dark-mode");
+
+		let button = document.getElementById("button");
+		if(button.innerHTML == "다크 모드") {
+			button.innerHTML = "라이트 모드";
+			//let kyeong = prompt("내 눈을 바라봐 (다음 가사)");
+		} else {
+			button.innerHTML = "다크 모드";
+		}
+	}
+	</script>
+</body>
+</html>
