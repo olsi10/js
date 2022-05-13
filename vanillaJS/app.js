@@ -145,3 +145,42 @@ function plus(a, b) {
 plus() //undefined, undefined / NaN (Not a Number)
 plus(3, 5); //3 ,5
 
+function plus2(firstNum, secondNum) {
+    console.log(firstNum + secondNum);
+}
+
+plus2(8, 60);
+//console.log(firstNum); //에러!! firstNum은 함수의 지역변수, 즉, plus 속에서만 존재
+
+const player2 = {
+    name : "nico",
+    sayhello : function(personName) {
+        console.log("Hello! " + personName);
+    },
+};
+
+console.log(player2.name);
+player2.sayhello("min jun");
+
+////////////////////////////////////////////
+
+const calculator = {
+    add : function(a, b) {
+       console.log(a + b);
+    },
+    min : function(a, b) {
+        console.log(a -b)
+    },
+    div : function(a, b) {
+        console.log(a / b)
+    },
+    powof : function(a, b) {
+        console.log(a**b)
+    },
+};
+//+ -  / **
+
+calculator.add(1, 2);
+calculator.min(1, 2);
+calculator.div(1, 2);
+calculator.powof(1, 2);
