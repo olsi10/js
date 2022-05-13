@@ -1,0 +1,42 @@
+<script>
+
+//1.
+
+function sumAll(parameter) {
+    let add = 0;
+    for (let i = 0; i < parameter.length; i++) {
+        add += parameter[i];
+    }
+
+    return add;
+}
+
+let result = sumAll([1, 2, 3]);
+console.log(result);
+
+////////////////////////////////////////////////////
+////////////////////////////////////////////////////
+
+//2.
+function getDiscountPrice(product) {
+    sale = product.price * product.rate;
+    price = product.price - sale;
+
+    console.log(price);
+}
+
+let product = {
+        name : "라면",
+        price : 1000,
+        rate : 0.2,
+    };
+
+let discountPrice = getDiscountPrice(product); //800
+
+////////////////////////////////////////////////////
+////////////////////////////////////////////////////
+
+//3.
+
+
+</script>
