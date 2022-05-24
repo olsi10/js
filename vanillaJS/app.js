@@ -190,15 +190,15 @@ calculator.powof(1, 2);
 //console.log에서 출력하는 것이 아닌 나한테서 출력하기
 //alert, 
 
-const age = 96;
+//const age = 96;
 function calculatorKrAge(agrOfForeigner) {
     agrOfForeigner + 2;
     return agrOfForeigner;
 }
 //함수는 어떤 일을 수행하는 것도 맞지만 수행하고 결과를 '나에게 알려주는 것'으로 생각하면 된다.
 
-const krAge = calculatorKrAge(age);
-console.log(krAge); //undefined > 위에 return문이 없을 때
+//const krAge = calculatorKrAge(age);
+//console.log(krAge); //undefined > 위에 return문이 없을 때
 
 //return을 사용하기 위해 function을 사용. function이 function 바깥과 소통하기 위한 것
 
@@ -221,19 +221,33 @@ const calculator2 = {
 
 //console.log(plus(2, 3)); //아무것도 안 뜸. return만 했을 뿐이기 때문에
 
-const plusResult = calculator2.plus(2, 3);
-console.log(plusResult);
-const minResult = calculator2.min(plusResult, 3);
-console.log(minResult)
-const divResult = calculator2.div(minResult, 5);
-console.log(divResult)
-const powResult = calculator2.pow(2, divResult);
-console.log(powResult)
+//const plusResult = calculator2.plus(2, 3);
+// console.log(plusResult);
+// const minResult = calculator2.min(plusResult, 3);
+// console.log(minResult)
+// const divResult = calculator2.div(minResult, 5);
+// console.log(divResult)
+// const powResult = calculator2.pow(2, divResult);
+// console.log(powResult)
 
 /////////////////////////////////////////////////////////////////
 
-const calculator2 = {
-    add : function(a, b) {
-        return a + b;
+// const calculator2 = {
+//     add : function(a, b) {
+//         return a + b;
         //return 후의 코드는 종료됨
         //console.log("hello"); 실행 x
+
+///////////////////////////////////////////////
+
+//조건문
+
+// const age = prompt("How are you?");
+
+// console.log(typeof(age)); //string, prompt는 모든 입력을 string으로 받음
+// console.log(age, parseInt(age));
+
+// console.log(typeof("15"), typeof(parseInt("15"))); //string, number
+
+const age = parseInt(prompt("How old art you?")); //number
+//함수는 내부->외부 순서, prompt = 첫 번째 함수, parseInt = 두 번째 함수
