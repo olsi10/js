@@ -229,3 +229,11 @@ const divResult = calculator2.div(minResult, 5);
 console.log(divResult)
 const powResult = calculator2.pow(2, divResult);
 console.log(powResult)
+
+/////////////////////////////////////////////////////////////////
+
+const calculator2 = {
+    add : function(a, b) {
+        return a + b;
+        //return 후의 코드는 종료됨
+        //console.log("hello"); 실행 x
