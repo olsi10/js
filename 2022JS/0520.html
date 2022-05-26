@@ -1,0 +1,92 @@
+<script>
+  //평균값을 반환하는 average 함수
+
+  function average(num) {
+    let add = 0;
+    for (let i = 0; i < num.length; i++) {
+      add += num[i];
+    }
+
+    return add / num.length;
+  }
+
+  let avg = average([100, 50, 25]);
+  console.log(avg); //58.333
+
+  ///////////////////////////////////////////////////////////////////
+  ///////////////////////////////////////////////////////////////////
+
+  function addMatrix(m1, m2) {
+    let result = [];
+    for (let i = 0; i < m1.legnth; i++) {
+      let row = [];
+      for (let j = 0; j < m1[i].length; j++) {
+        row.push(m1[i][j] + m2[i][j]);
+      }
+      result.push(row);
+    }
+    return result;
+  }
+
+  const m = addMatrix(
+   [ 
+      [1, 2],
+      [3, 4],
+    ],
+    [
+      [3, 4],
+      [5, 6],
+    ]
+  );
+  console.log(m); //[4, 6] [8, 10]
+
+  ///////////////////////////////////////////////////////////////////
+  ///////////////////////////////////////////////////////////////////
+
+  function swapKeyValue(num) {
+    let o = {};
+    for (const key in num) {
+      //for in 은 객체의 키 값을 순회
+      const value = num[key];
+      o[value] = key;
+    }
+    return o;
+  }
+
+  const o = { a: "B", c: "D" };
+  const o2 = swapKeyValue(o);
+  console.log(o2); //{B : "a", D : "C"}
+
+  ///////////////////////////////////////////////////////////////////
+  ///////////////////////////////////////////////////////////////////
+
+  function chunk(arr, size) {
+    let result = [];
+    for (let i = 0; i < arr.length; i += size) {
+      result.push(arr.slice(i, i + size));
+    }
+
+    return result;
+  }
+
+  const r1 = chunk([1, 2, 3, 4, 5], 2);
+  console.log(r1); //[[1,2], [3,4], [5]]
+
+  const r2 = chunk([1, 2, 3, 4, 5], 3);
+  console.log(r2); //[[1,2,3], [4, 5]]
+
+  ///////////////////////////////////////////////////////////////////
+  ///////////////////////////////////////////////////////////////////
+
+  function Range(range) {
+    this.range = range;
+    range in Range;
+
+    return range;
+  }
+
+  let r = new Range(1, 10);
+  //가급적 in 메서드를 prototype에 정의해보자 (아니어도 구현 됨)
+  let b1 = r.in(5); //b1 => true
+  let b2 = r.in(11); //b2 => false
+</script>
