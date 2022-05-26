@@ -251,3 +251,4 @@ const calculator2 = {
 
 const age = parseInt(prompt("How old art you?")); //number
 //함수는 내부->외부 순서, prompt = 첫 번째 함수, parseInt = 두 번째 함수
+console.log(age);
