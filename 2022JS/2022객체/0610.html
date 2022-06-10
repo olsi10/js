@@ -1,0 +1,117 @@
+<script>
+  //user 객체에 메서드 추가
+  //1. 미성년자 여부를 알려주는 isMinor 메소드 (true, false 반환)
+  //2. 자신의 이름을 말하는 speakName 메서드 (단, 메서드에 숫자값을 전달하면 여러 번 말할 수 있음 ex)speakName(3))
+  //구현 과정에서 this값 활용
+
+  //   const user = { id: 1, name: "John", age: 20 };
+
+  // user.isMinor = function isMinor() {
+  //   if (this.age < 20) return true;
+  //   else return false;
+  // };
+
+  // user.speakName = function speakName(say = 1) {
+  //   //default 파라미터
+  //   for (let i = 0; i < say; i++) {
+  //     console.log("내 이름은 " + this.name);
+  //   }
+  // };
+
+  //   //   console.log(user.isMinor());
+  //   //   user.speakName(3);
+
+  //   function Point(x, y) {
+  //     this.x = x;
+  //     this.y = y;
+  //   }
+
+  //   // 다음의 생성자 함수 작성
+  //   let p = new Point(2, 3);
+  //   console.log(p); //{ x : 2, y : 3}
+
+  //   function User(id, name, age) {
+  //     this.id = id;
+  //     this.name = name;
+  //     this.age = age;
+  //   }
+
+  //   let u = new User(1, "John", 20);
+  //   console.log(u); //id : 1, name : John, age: 20
+  //   //1벙 문제의 메서드를 ㄴ생성자 함수 내부에서 추가하거나
+  //   //프로토타입 이용해서 정의하기 ( 권장)
+
+  //   User.prototype.isMinor = function () {
+  //     user.isMinor = function isMinor() {
+  //       if (this.age < 20) return true;
+  //       else return false;
+  //     };
+  //   };
+
+  //   User.prototype.speakName = function () {
+  //     user.speakName = function speakName(say = 1) {
+  //       //default 파라미터
+  //       for (let i = 0; i < say; i++) {
+  //         console.log("내 이름은 " + this.name);
+  //       }
+  //     };
+  //   };
+
+  //클래스와 constructor 이용해서 User 정의
+
+  //   class User {
+  //     constructor(id, name, age) {
+  //       this.id = id;
+  //       this.name = name;
+  //       this.age = age;
+  //     }
+
+  //     isMinor() {
+  //       if (this.age < 20) return true;
+  //       else return false;
+  //     }
+
+  //     speakName(say) {
+  //       for (let i = 0; i < say; i++) {
+  //         console.log("이름은 " + this.name);
+  //       }
+  //     }
+  //   }
+
+  //   let user = new User(1, "John", 20);
+  //   console.log(user);
+  //   console.log(user.isMinor());
+
+  class Bank {
+    constructor(m = 0) {
+      this.money = m;
+    }
+
+    desposit(plus) {
+      this.money += plus;
+    }
+
+    getBalance() {
+      return this.money;
+    }
+
+    withdraw(min) {
+      if (min >= this.money) {
+        const left = this.money;
+        this.money = 0;
+        return left;
+      } else {
+        return (this.money -= min);
+      }
+    }
+  }
+
+  let bank = new Bank();
+  bank.desposit(1000);
+  bank.desposit(2000);
+  console.log(bank.getBalance()); //3000
+  let r1 = bank.withdraw(1000);
+  console.log(r1, bank.getBalance()); //1000 ,2000
+  let r2 = bank.withdraw(5000);
+  console.log(r2, bank.getBalance()); //2000, 0
+</script>
