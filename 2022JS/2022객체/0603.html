@@ -1,0 +1,154 @@
+<script>
+  // 객체 만들기 (객체 생성자, 객체 리터럴)
+
+  const dog = {
+    name: "Puppy",
+    age: 5,
+    gender: "female",
+  };
+
+  const dog2 = new Object();
+  dog2.name = "Puppy";
+  dog2.age = 5;
+  dog2.gender = "female";
+
+  console.log("나의 귀여운 강아지 이름은  " + dog.name);
+  console.log("나이는 " + dog.age);
+  console.log("성별은 우람한 " + dog.gender);
+
+  const food = new Object();
+  food.name = "라면";
+  food.price = 1000;
+  food.discountRate = 0.2;
+
+  console.log("식품명 : " + food.name);
+  console.log("가격 : " + food.price);
+  console.log("할인율 : " + food.discountRate);
+
+  const FishKiller = {
+    name: "Sebastian",
+    age: "unknown",
+    color: "Blue and liite bit green",
+    length: 60,
+    weight: 8,
+    favoriteFood: "Fish of Mirim HighSchool",
+    house: "river",
+  };
+
+  FishKiller["Number of Feet"] = 2;
+  FishKiller["isHaveWing?"] = "True";
+
+  console.log("이름은 " + FishKiller.name);
+  console.log("나이는 " + FishKiller.age);
+  console.log("몸 색은 " + FishKiller.color);
+  console.log("길이는 " + FishKiller.length);
+  console.log("무게는 " + FishKiller.weight);
+  console.log("좋아하는 음식 " + FishKiller.favoriteFood);
+  console.log("사는 곳 " + FishKiller.house);
+
+  delete FishKiller.weight;
+
+  FishKiller["booty-count"] = 2;
+
+  //위에서 만든 객체 값 단축 구문으로 쓰기
+  //변수와 속성 이름이 같을 때 축약하여 쓸 수 있음
+  // let phone = "Galaxy";
+  let color = "red";
+
+  // phone = {
+  // phone,
+  // color,
+  // };
+
+  //위에가 싫다면 귀찮게 아래처럼 해야 함
+  // phone = {
+  //   phone: phone,
+  //   color: color,
+  // };
+
+  // console.log(phone);
+
+  //console.log(FishKiller.weight); Error defind
+
+  //////////////////////////수행 문제 예상//////////////////////////////////////////////////
+
+  // function changeUser(u, name, name1, bool) {
+  //   if (bool === true) {
+  //     u[name] = name1;
+  //     return u;
+  //   } else {
+  //     let copy = Object.assign({}, u); //(target... user)
+  //     u[name] = name1;
+  //     return copy;
+  //   }
+  // }
+
+  // let user = {
+  //   name: "John",
+  //   age: 20,
+  // };
+
+  // let u1 = changeUser(user, "name", "Sam", true);
+  // let u2 = changeUser(user, "name", "Sam", false);
+  // let u3 = changeUser(user, "name", 30, false);
+
+  // console.log(user === u1); //true
+  // console.log(user === u2); //false
+  // console.log(u3); //name : "John", age : 30
+
+  ////////////////////////////////////////////////////////////////////////
+
+  let ask = prompt("name, age 둘 중 하나 입력하세요.");
+
+  function query(obj) {
+    while (1) {
+      if (ask == obj.name || ask == obj.age) {
+        alert(ask);
+        break;
+      } else {
+        let ask2 = prompt("name, age 둘 중 하나 제대로 입력하세요.");
+        if (ask2 == obj.name || ask2 == obj.age) {
+          alert(ask2);
+          break;
+        }
+      }
+    }
+  }
+
+  function query1(obj) {
+    //1. 어떻게 속성 이름을 모두 파악할 수 있나?
+    const props = [];
+    for (const key in obj) {
+      props.push(key);
+    }
+    //2. 속성 이름을 배열에 저장하고 전부 ","로 합치려면?
+    const s = props.join(",");
+    while (true) {
+      //3. 배열에 해당 이름이 포함되어 있는지 검사하느 로직 작성은
+      //어떻게 -> 이건 그냥 짜도 될 듯?
+      const input = prompt(s + "중 속성 입력");
+      if (props.includes(input.trim())) {
+        alert(obj[input]);
+        break;
+      }
+    }
+  }
+
+  const user = {
+    name: "John",
+    age: 20,
+  };
+
+  const phone = {
+    price: 1000000,
+    model: "iPhone",
+    manu: "Apple",
+  };
+
+  query(user);
+  query1(phone);
+
+  //이후 prompt 창이 뜨고 name, age 중  속성 입력
+  //name 혹은 age 로 올바르게 입력한 경우 해당 속성값을 alert로 출력
+  //아니면 다시 prompt를 입력
+</script>
