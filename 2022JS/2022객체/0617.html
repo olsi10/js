@@ -1,0 +1,29 @@
+<script>
+  ///adhoc (애드혹)하게 객체 생성하기 => 객체 리터럴
+  //애드록이란, 라틴어로 "이것을 위해", 즉, "특별한 목적을 위해서"
+
+  //대량으로 찍어낼 객체 생성하기 => 생성자 함수, 클래스
+
+  function getSummary(arr) {
+    let max = [0];
+    let min = [0];
+    let sum = 0;
+
+    for (const num of arr) {
+      if (num > max) {
+        max = num;
+      }
+      if (num < min) {
+        min = num;
+      }
+      sum += num;
+    }
+
+    avg = sum / arr.length;
+
+    return { max, min, avg };
+  }
+
+  let summary = getSummary([100, 50, 60]);
+  console.log(summary); // { max : 100, min : 50, avg : 70}
+</script>
