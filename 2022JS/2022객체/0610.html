@@ -82,30 +82,50 @@
   //   console.log(user);
   //   console.log(user.isMinor());
 
-  class Bank {
-    constructor(m = 0) {
-      this.money = m;
-    }
+//   class Bank {
+//     constructor(m = 0) {
+//       this.money = m;
+//     }
 
-    desposit(plus) {
-      this.money += plus;
-    }
+//     desposit(plus) {
+//       this.money += plus;
+//     }
 
-    getBalance() {
-      return this.money;
-    }
+//     getBalance() {
+//       return this.money;
+//     }
 
-    withdraw(min) {
-      if (min >= this.money) {
-        const left = this.money;
-        this.money = 0;
-        return left;
-      } else {
-        return (this.money -= min);
-      }
-    }
+//     withdraw(min) {
+//       if (min >= this.money) {
+//         const left = this.money;
+//         this.money = 0;
+//         return left;
+//       } else {
+//         return (this.money -= min);
+//       }
+//     }
+//   }
+
+    function Bank(init = 0) {
+    this.balance = init;
   }
-
+  Bank.prototype.getBalance = function () {
+    return this.balance;
+  };
+  Bank.prototype.desposit = function (amount) {
+    this.balance += amount;
+  };
+  Bank.prototype.withdraw = function (amount) {
+    if (amount >= this.balance) {
+      const left = this.balance;
+      this.balance = 0;
+      return left;
+    } else {
+      this.balance -= amount;
+      return amount;
+    }
+  };
+  
   let bank = new Bank();
   bank.desposit(1000);
   bank.desposit(2000);
