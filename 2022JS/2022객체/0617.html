@@ -4,26 +4,86 @@
 
   //대량으로 찍어낼 객체 생성하기 => 생성자 함수, 클래스
 
-  function getSummary(arr) {
-    let max = [0];
-    let min = [0];
-    let sum = 0;
+  //   function getSummary(arr) {
+  //     let max = [0];
+  //     let min = [0];
+  //     let sum = 0;
 
-    for (const num of arr) {
-      if (num > max) {
-        max = num;
-      }
-      if (num < min) {
-        min = num;
-      }
-      sum += num;
+  //     for (const num of arr) {
+  //       if (num > max) {
+  //         max = num;
+  //       }
+  //       if (num < min) {
+  //         min = num;
+  //       }
+  //       sum += num;
+  //     }
+
+  //     avg = sum / arr.length;
+
+  //     return { max, min, avg };
+  //   }
+
+  //   let summary = getSummary([100, 50, 60]);
+  //   console.log(summary); // { max : 100, min : 50, avg : 70}
+
+  //객체 지향 프로그래밍을 이해해보자
+
+  class Cart {
+    getTotalItemCount() {
+      this.cnt += cnt;
     }
-
-    avg = sum / arr.length;
-
-    return { max, min, avg };
+    getTotalPrice() {
+      totalPrice = this.price += price;
+      return totalPrice;
+    }
+    getTotalDiscountPrice() {
+      disPrice = this.price -= price * sale;
+      return disPrice;
+    }
+    getDifference() {
+      return totalPrice - disPrice;
+    }
+    add(product) {
+      return product;
+    }
+    empty() {}
   }
 
-  let summary = getSummary([100, 50, 60]);
-  console.log(summary); // { max : 100, min : 50, avg : 70}
+  class CartItem {
+    constructor(name, price, cnt, sale) {
+      this.name = name;
+      this.price = price;
+      this.cnt = cnt;
+      this.sale = sale;
+    }
+
+    getPrice() {
+      return this.price * this.cnt;
+    }
+    getDiscountPrice() {
+      let s = this.price * this.cnt;
+      let m = this.price * this.sale;
+      return s - m;
+    }
+  }
+
+  //객체 지향 프로그래밍을 이해해보자
+  let cart = new Cart();
+
+  let item1 = new CartItem("초코파이", 2000, 10, 0.1);
+  let item2 = new CartItem("신라면 블랙", 1000, 5, 0.2);
+
+  console.log(item1.getPrice()); //20000
+  console.log(item1.getDiscountPrice()); //18000
+
+  cart.add(item1);
+  cart.add(item2);
+
+  console.log(cart.getTotalItemCount()); // 총 개수 15
+  console.log(cart.getTotalPrice()); //할인 전 금액 25,000
+  console.log(cart.getTotalDiscountPrice()); // 할인 후 금액 22,000
+  console.log(cart.getDifference()); //3000
+
+  cart.empty(); //0
 </script>
