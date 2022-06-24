@@ -98,41 +98,41 @@
 
   ////////////////////////////////////////////////////////////////////////
 
-  let ask = prompt("name, age 둘 중 하나 입력하세요.");
+  // let ask = prompt("name, age 둘 중 하나 입력하세요.");
 
-  function query(obj) {
-    while (1) {
-      if (ask == obj.name || ask == obj.age) {
-        alert(ask);
-        break;
-      } else {
-        let ask2 = prompt("name, age 둘 중 하나 제대로 입력하세요.");
-        if (ask2 == obj.name || ask2 == obj.age) {
-          alert(ask2);
-          break;
-        }
-      }
-    }
-  }
+  // function query(obj) {
+  //   while (1) {
+  //     if (ask == obj.name || ask == obj.age) {
+  //       alert(ask);
+  //       break;
+  //     } else {
+  //       let ask2 = prompt("name, age 둘 중 하나 제대로 입력하세요.");
+  //       if (ask2 == obj.name || ask2 == obj.age) {
+  //         alert(ask2);
+  //         break;
+  //       }
+  //     }
+  //   }
+  // }
 
-  function query1(obj) {
-    //1. 어떻게 속성 이름을 모두 파악할 수 있나?
-    const props = [];
-    for (const key in obj) {
-      props.push(key);
-    }
-    //2. 속성 이름을 배열에 저장하고 전부 ","로 합치려면?
-    const s = props.join(",");
-    while (true) {
-      //3. 배열에 해당 이름이 포함되어 있는지 검사하느 로직 작성은
-      //어떻게 -> 이건 그냥 짜도 될 듯?
-      const input = prompt(s + "중 속성 입력");
-      if (props.includes(input.trim())) {
-        alert(obj[input]);
-        break;
-      }
-    }
-  }
+  // function query1(obj) {
+  //   //1. 어떻게 속성 이름을 모두 파악할 수 있나?
+  //   const props = [];
+  //   for (const key in obj) {
+  //     props.push(key);
+  //   }
+  //   //2. 속성 이름을 배열에 저장하고 전부 ","로 합치려면?
+  //   const s = props.join(",");
+  //   while (true) {
+  //     //3. 배열에 해당 이름이 포함되어 있는지 검사하느 로직 작성은
+  //     //어떻게 -> 이건 그냥 짜도 될 듯?
+  //     const input = prompt(s + "중 속성 입력");
+  //     if (props.includes(input.trim())) {
+  //       alert(obj[input]);
+  //       break;
+  //     }
+  //   }
+  // }
 
   const user = {
     name: "John",
