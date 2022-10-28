@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const makePersonDiv = (name, age) => {
+            let div = document.createElement('div');
+            
+            let bN = document.createElement('b');
+            bN.innerHTML = `이름 : ${name}`;
+            
+            let bA = document.createElement('b');
+            bA.innerHTML = `나이 : ${age}`;
+            
+            
+            div.appendChild(bN);
+            div.append(document.createElement('br'));
+            div.appendChild(bA);
+
+            return div;
+
+        }
+
+        let func = makePersonDiv("John", 20);
+        document.body.append(func);
+
+        let func1 = makePersonDiv("Kim", 36);
+        document.body.append(func1);
+
+        let func2 = makePersonDiv("Lee", 23);
+        document.body.append(func2);
+    </script>
+
+    <!-- <div>
+        <b>이름 : name</b>
+        <b>나이 : age</b>
+    </div> -->
+</body>
+</html>
