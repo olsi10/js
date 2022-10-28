@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let menu = document.createElement('ul');
+        menu.setAttribute('id', 'menu');
+        let url = ['./file/1.html', './file/2.html', './file/3.html'];
+
+        for(let i = 0; i < 3 ; i++) {
+            let li = document.createElement('li');
+            let a = document.createElement('a');
+            a.setAttribute('href', url[i]);
+            li.append(a);
+            a.innerHTML = i+1;
+            // document.write('<li><a href="'+ url[i] +'">'+ (i+1) +'</a></li>');
+            menu.appendChild(li);
+        }
+
+        document.body.append(menu);
+    </script>
+
+    <!-- <ul id = "menu">
+        <li><a href='./file/1.html'>1</a></li>
+        <li><a href='./file/2.html'>2</a></li>
+        <li><a href='./file/3.html'>3</a></li>
+    </ul> -->
+
+</body>
+</html>
