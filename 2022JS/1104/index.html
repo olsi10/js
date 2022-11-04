@@ -30,18 +30,13 @@
         return div;
     }
 
-    let post = makePost("내 엉덩이는 어디로?", "푸케케컄캭캭꺅");
-    divP.append(post);
-    divP.append(makePost("뿡", "으엑"));
-    divP.append(makePost("뿡", "으엑"));
-    divP.append(makePost("뿡", "으엑"));
-    divP.append(makePost("뿡", "으엑"));
-    divP.append(makePost("뿡", "으엑"));
-    divP.append(makePost("뿡", "으엑"));
-    divP.append(makePost("뿡", "으엑"));
-    divP.append(makePost("뿡", "으엑"));
-    divP.append(makePost("뿡", "으엑"));
-    divP.append(makePost("뿡", "으엑"));
+    // let post = makePost("내 엉덩이는 어디로?", "푸케케컄캭캭꺅");
+    // divP.append(post);
+
+    for(let i = 0; i < 20; i++) {
+        divP.append(makePost("뿡" + (i + 1), "으엑" + (i  +1)));
+    }
+
     
 </script>   
 </html>
