@@ -18,15 +18,23 @@
         let h = document.createElement('h1');
         let p = document.createElement('p');
 
+
+        let b = document.createElement('button');
+        // b.onclick = function() { div.remove() };
+        b.onclick = ()=> { div.remove() };
+
         hT = document.createTextNode(`${title}`);
         pT = document.createTextNode(`${content}`);
+        bT = document.createTextNode('삭제');
 
         h.append(hT);
         p.append(pT);
+        b.append(bT);
 
         div.appendChild(h);
         div.appendChild(p);
-
+        div.appendChild(b);
+        
         return div;
     }
 
