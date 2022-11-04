@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="posts"></div>
+</body>
+<script>
+
+    let divP = document.getElementById('posts');
+
+    const makePostEditor = () => {
+        let div = document.createElement('div');
+        let span1 = document.createElement('h4');
+        let span2 = document.createElement('h4');
+        let intitle = document.createElement('input');
+        let incontent = document.createElement('input');
+
+        let b = document.createElement('button');
+        // b.onclick = function() { div.remove() };
+        b.onclick = () => { 
+            let post = makePost(
+                intitle, incontent
+            );
+            divP.append(post);
+         }
+
+        div.setAttribute('id', 'editor');
+        span1.innerHTML = "글 제목";
+        span2.innerHTML = "글 내용";
+        intitle.setAttribute('type', 'text');
+        intitle.setAttribute('id', 'title');
+        incontent.setAttribute('type', 'text');
+        incontent.setAttribute('id', 'content');
+        bT = document.createTextNode('글 추가');
+        b.append(bT);
+        
+        
+        div.appendChild(span1);
+        div.appendChild(intitle);
+        div.append(document.createElement('br'));
+        div.appendChild(span2);
+        div.appendChild(incontent);
+        div.append(document.createElement('br'));
+        div.appendChild(b);
+
+
+        return div;
+
+    }
+
+    document.body.prepend(makePostEditor());
+
+    const makePost = (title, content) => {
+        let div = document.createElement('div')
+        let h = document.createElement('h1');
+        let p = document.createElement('p');
+
+
+        let b = document.createElement('button');
+        // b.onclick = function() { div.remove() };
+        b.onclick = ()=> { div.remove() };
+
+        hT = document.createTextNode(`${title}`);
+        pT = document.createTextNode(`${content}`);
+        bT = document.createTextNode('삭제');
+
+        h.append(hT);
+        p.append(pT);
+        b.append(bT);
+
+        div.appendChild(h);
+        div.appendChild(p);
+        div.appendChild(b);
+        
+        return div;
+    }
+
+    // let post = makePost("내 엉덩이는 어디로?", "푸케케컄캭캭꺅");
+    // divP.append(post);
+    divP.append(makePost());
+
+    
+</script>   
+</html>
