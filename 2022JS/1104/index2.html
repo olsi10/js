@@ -25,8 +25,10 @@
         b.onclick = () => { 
             let post = makePost(
                 intitle, incontent
+            
             );
             divP.append(post);
+            alert(new Date().toString());
          }
 
         div.setAttribute('id', 'editor');
