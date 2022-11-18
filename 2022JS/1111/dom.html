@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>pepero~~gareddeok</title>
+  </head>
+  <body>
+    <div>
+      <input type="text" id="option_text" />
+      <button id="add_option">추가</button>
+    </div>
+
+    <div id="select-holder"></div>
+  </body>
+  <script>
+    const makeSelect = (arr) => {
+      let select = document.createElement("select");
+      for (let i = 0; i < arr.length; i++) {
+        let op = document.createElement("option");
+        opT = document.createTextNode(arr[i]);
+        op.append(opT);
+        op.setAttribute("value", arr[i]);
+        select.append(op);
+      }
+
+      return select;
+    };
+
+    const addOptionToSelect = (val, name) => {
+      let input_op = document.createElement("option");
+
+      input_op.textContent = name;
+      input_op.setAttribute("value", name);
+      val.append(input_op);
+    };
+
+    let options = ["apple", "banana", "grape"];
+    let s = makeSelect(options);
+    document.getElementById("select-holder").append(s);
+
+    // let btn = document.getElementById("add_option");
+    // let val = document.getElementById("option_text");
+    // btn.onclick = function () {
+    //   addOptionToSelect(s, val.value);
+    //   // addOptionToSelect(s, document.getElementById("option_text").value);
+    //   val.value = "";
+    // };
+
+    document.getElementById("add_option").onclick = function () {
+      addOptionToSelect(s, document.getElementById("option_text").value);
+      document.getElementById("option_text").value = "";
+    };
+
+    // 여기서 s는 생성된 select DOM 요소여야 함
+    // 전달한 배열을 선택할 수 있는 select가 만들어져야 함 (select 내부에 필요한 option 요소 만들기)
+    // 만든 요소 s를 #select-holder div에다가 삽입하는 코드 작성하고 잘 작동하는지 보기
+  </script>
+</html>
