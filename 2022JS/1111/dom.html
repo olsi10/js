@@ -49,8 +49,18 @@
     // };
 
     document.getElementById("add_option").onclick = function () {
+      
+      let op_txt = document.getElementById("option_text").value;
+
+      if(op_txt.length === 0) {
+        alert("입력하세요");
+      } else {
+
+      }
       addOptionToSelect(s, document.getElementById("option_text").value);
-      document.getElementById("option_text").value = "";
+
+
+      
     };
 
     // 여기서 s는 생성된 select DOM 요소여야 함
