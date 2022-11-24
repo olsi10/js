@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    const text = {
+        Name1 : 1,
+        Name2 : 2
+    };
+
+    // 객체이름.프로퍼티이름 or 객체 이름["프로퍼티 이름"]
+
+    console.log(text.Name1);
+    console.log(text["Name1"]);
+
+    // 객체에 이미 키가 존재하는데, 다시 한 번 할당하면 값이 교체(수정)된다.
+
+    text.Name1 = 3;
+    console.log(text.Name1) // "2"
+
+    // 이전에 없던 키로 접근하면, 새로운 프로퍼티가 추가된다.
+
+    text.Name3 = "4"; // "4"
+
+    // 객체의 Method(메서드)
+    // 객체에 저장된 값이 함수일 때, 메서드라고 부른다.
+
+    let obj = {
+        do : function() {
+            console.log("메서드 정의");
+        },
+        name : "melon",
+        pice : 2000
+    };
+
+    obj.do(); // 호출
+
+    // Object.keys 메서드는 어떤 객체가 가지고 있는 키들의 목록을 배열로 리턴하는 메서드이다.
+
+   console.log(Object.keys(obj)); // 나열
+
+    // Object.values()는 객체의 키가 아닌 값으로 이루어진 배열을 리턴합니다.
+
+    console.log(Object.values(obj));
+
+    //Object.entries 는 객체의 키와 값의 쌍으로 이루어진 길이 2짜리 배열로 이루어진, 배열을 리턴합니다.
+
+    console.log(Object.entries(obj));//   [['name', 'melon'], ['weight', 4350],['price', 16500]]
+
+    // 객체를 순회하는 방법은 for-in 문이다.
+
+    for (let i in obj) {
+        const value = obj[i];
+
+        console.log(i); // 키
+        console.log(value); // 값
+    }
+
+    //////////////////////////////////////////////////////////////
+
+    // 생성자 함수
+
+    function Teacher(name, age, subject) {
+        this.name = name;
+        this.age = age;
+        this.subject = subject;
+        this.teach = function(student) {
+            console.log(`${student}에게 ${this.subject}를 가릅칩니다`);
+        }
+    }
+
+    const kim = new Teacher("Kim", 30, "Java");
+    console.log(kim);
+    kim.teach("choi");
+    
+    // class 키워드를 이용해서 생성자 함수를 이용한 객체 생성을 대체할 수 있음 (단, class 키워드는 ES6에서 추가된 새로운 문법)
+
+    
+    
+
+</script>
+</html>
