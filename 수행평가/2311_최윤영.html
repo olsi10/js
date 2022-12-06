@@ -1,76 +1,88 @@
-<script>
-  // 2311 최윤영
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>2311_최윤영</title>
+  </head>
+  <body></body>
+  <script>
+    // 1. 점수가 들어있는 배열을 학점으로 바꾼 배열을 반환하는 transform 함수
 
-  //  1. 마지막 요소를 반환하는 last 함수
+    const transform = (arr) => {
+      for (let i in arr) {
+        if (arr[i] >= 90) {
+          arr[i] = "A";
+        } else if (arr[i] >= 80) {
+          arr[i] = "B";
+        } else if (arr[i] >= 70) {
+          arr[i] = "C";
+        } else if (arr[i] >= 60) {
+          arr[i] = "D";
+        } else if (arr[i] < 60) {
+          arr[i] = "E";
+        }
+      }
 
-  // function last(num) {
-  //   if (num.pop() == undefined) {
-  //     return null;
-  //   }
+      return arr;
+    };
 
-  //   a = num.pop();
-  //   return a;
-  // }
+    let arr = transform([100, 90, 80, 70, 60, 50, 30]);
+    console.log(arr); // ["A", "A", "B", "C", "D", "E", "E"];
 
-  // const value1 = last([2, 1]);
-  // console.log(value1);
+    //////////////////////////////////////////////////////////////////////
+    //////////////////////////////////////////////////////////////////////
+    //////////////////////////////////////////////////////////////////////
 
-  // const value2 = last([2]);
-  // console.log(value2);
+    // 2.
 
-  // const value3 = last([]);
-  // console.log(value3);
+    function Employee(name, position, salary) {
+      this.name = name;
+      this.position = position;
+      this.salary = salary;
+      this.isSenior = function () {
+        return this.position == "senior";
+      };
 
-  //2. 특정 위치를 반환하는 nth 함수
+      this.showAnnualSalary = function () {
+        if (this.position == "senior") {
+          console.log("연봉 : " + salary * 12 * 1.5);
+        } else {
+          console.log("연봉 : " + salary * 12);
+        }
+      };
+    }
 
-    // let num = [];
+    let e1 = new Employee("김철수", "junior", 2000);
+    console.log(e1.name, e1.position);
+    e1.showAnnualSalary(); // 24000
+    console.log(e1.isSenior());
 
-    // function nth(num, i) {
-    //   a = num[i];
+    let e2 = new Employee("이영희", "senior", 3000);
+    console.log(e2.name, e2.position);
+    e2.showAnnualSalary(); // 54000
+    console.log(e2.isSenior());
 
-    //   return a;
-    // }
+    //////////////////////////////////////////////////////////////////////
+    //////////////////////////////////////////////////////////////////////
+    //////////////////////////////////////////////////////////////////////
 
-    // const value1 = nth([2, 3, 1], 2);
-    // console.log(value1);
-    // const value2 = nth([2, 3, 1], 3);
-    // console.log(value2);
-    // const value3 = nth([], 0);
-    // console.log(value3);
+    // 3.
 
-  //3. 배열 순서를 거꾸로 뒤집어 주는 reverse 함수
+    function Range(from, to) {
+      this.from = from;
+      this.to = to;
+      this.in = function (num) {
+        return num >= from && num <= to;
+      };
+    }
 
-  // function reverse(arr) {
-  //   let result = [];
-  //   for (let i = arr.length - 1; i >= 0; i--) {
-  //   result.push(arr[i]);
-   
-  // }
-
-  //   return result;
-  // }
-
-  // const value1 = reverse([3, 2, 1]);
-  // console.log(value1);
-  // const value2 = reverse(["Hello", "World"]);
-  // console.log(value2);
-
-  // 4. 문자열 길이를 줄여주는 short 함수
-
-  // let a, b, c, d;
-
-  // function short(str) {
-  //   if (str.length >= 10) {
-  //     return str[0] + (str.length - 2) + str[str.length - 1];
-  //   } else {
-  //     return str;
-  //   }
-
-  //   return d;
-  // }
-
-  // console.log(short("word")); // word
-  // // 문자열의 길이가 10 이상이어야 문자열 줄이기 기능이 작동
-  // console.log(short("localization")); // l10n
-  // console.log(short("internationalization")); // i18
-</script>
+    let range = new Range(1, 10);
+    console.log(range.in(0)); // false
+    console.log(range.in(1)); // true
+    console.log(range.in(5)); // true
+    console.log(range.in(10)); // true
+    console.log(range.in(11)); // false
+  </script>
+</html>
