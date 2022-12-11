@@ -66,27 +66,55 @@
 // console.log(aa.prototype);
 // console.log(hello.prototype.constructor === hello);
 
-function Animal(name, age) {
-    this.name = name;
-    this.age = age;
-};
+// function Animal(name, age) {
+//     this.name = name;
+//     this.age = age;
+// };
 
-Animal.prototype.isAnimal = true;
-Animal.prototype.eat = function() {
-    console.log("밥 먹기");
-};
+// Animal.prototype.isAnimal = true;
+// Animal.prototype.eat = function() {
+//     console.log("밥 먹기");
+// };
 
-let sam = new Animal("sam", 2);
-let boksun = new Animal("bok", 3);
+// let sam = new Animal("sam", 2);
+// let boksun = new Animal("bok", 3);
 
-console.log(sam.isAnimal);
-console.log(boksun.isAnimal);
-sam.eat();
-boksun.eat();
+// console.log(sam.isAnimal);
+// console.log(boksun.isAnimal);
+// sam.eat();
+// boksun.eat();
 
-boksun.eat = function() {
-    console.log("복순 밥");
-};
+// boksun.eat = function() {
+//     console.log("복순 밥");
+// };
 
-boksun.eat();
+// boksun.eat();
 
+// let animal = {
+//     eat: function(food) {
+//         console.log(`${food}를 먹습니다.`);
+//     }
+// };
+//     let human = Object.create(animal);
+//     console.log(human); // { }
+//     console.log(human.__proto__);
+
+//     human.talk = function() {
+//         console.log("대화를 합니다.");
+//     }
+
+//     human.eat("밥"); // 밥을 먹습니다.
+//     human.talk(); // 대화를 합니다.
+
+class User {
+    constructor(name) {
+        this.name = name;
+    }
+
+    sayHi() {
+        console.log("안녕하세요");
+    }
+}
+
+let sam = new User("sam");
+sam.sayHi();
