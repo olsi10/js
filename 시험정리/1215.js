@@ -26,3 +26,18 @@
 
 // // constructor 속성에서는 자기 자신을 가리킴
 // console.log(User === User.prototype.constructor);
+
+// class User {
+//     name = "John";
+// }
+
+// let user = new User();
+
+// // 개별 객체 user에 name 속성이 추가됨
+// alert(user.name); // "John"
+
+// // prototype에 추가되어 공통적으로 사용할 속성이 되는 것이 아님
+// alert(User.prototype.name); // undefined
+
+// // prototype에 추가하고 싶다면
+// User.prototype.name = "John";
