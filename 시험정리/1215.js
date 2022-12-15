@@ -94,3 +94,32 @@
 //     // 그러나 nonBinded는 prototype 객체에 포함됨
 //     console.log( Button.prototype.nonBinded )
 
+
+// Q) 위와 비슷한 방식으로 Shape.prototype 객체를
+// 프로토타입 체인에서 검색할 수 있는 Circle 생성자 함수 정의하고
+// 고유의 area 메서드 정의하기
+// 공식은 π*r^2
+
+// function Circle(r) {
+//     this.r = r;
+// }
+
+// Circle.prototype.area = function(r) {
+//     let width = 3.14 * (r * r); 
+//     console.log(`원의 너비는 : ${width}`); 
+// }
+
+// function Shape(r) {
+//     Circle.call(this, r);
+//     this.r = r;
+// }
+
+// // [[Prototype]] 을 객체로 가지는 빈 객체 생성
+// Shape.prototype = Object.create(Circle);
+
+// // 대입으로 인해 constructor가 사라짐 다시 설정
+// Shape.prototype.constructor = Shape;
+
+// // 반지름이 4인 객체
+// let c = new Shape(4);
+// console.log(c.area);
